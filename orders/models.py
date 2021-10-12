@@ -5,5 +5,5 @@ from django.db import models
 class Order(models.Model):
     name = models.CharField(max_length=255)
     order = models.JSONField()
-    phoneNumber = models.CharField(max_length=255)
+    phone_number = models.CharField(max_length=255)
     
