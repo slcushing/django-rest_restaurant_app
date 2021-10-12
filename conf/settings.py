@@ -38,16 +38,21 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
+    
 
     #3rd party
     'rest_framework',
+    'corsheaders',
 
     #local apps
     'api.apps.ApiConfig',
     'menuitems.apps.MenuitemsConfig',
+    'orders.apps.OrdersConfig',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',  # new
+    'django.middleware.common.CommonMiddleware',  # new
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
