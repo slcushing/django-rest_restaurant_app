@@ -1,7 +1,9 @@
-from django.urls import path,include
+from django.urls import path
 
-app_name = 'api_v1'
+from .views import OrderListAPIView
+
+app_name = 'orders'
 
 urlpatterns = [
-    path('orders/', include('orders.urls', namespace=('orders'))),
+    path('', OrderListAPIView.as_view(), name="order_list")
 ]
